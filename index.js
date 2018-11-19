@@ -1,4 +1,5 @@
 var express = require("express");
+var cors = require('cors');
 
 var app = express();
 
@@ -9,7 +10,7 @@ console.log("Server running on port 3000");
 
 });
 
-
+app.use(cors());
 app.use('/users/authenticate', bodyParser, function (req, res) {
 
 if(req.method=='GET'){
